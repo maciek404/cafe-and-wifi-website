@@ -1,0 +1,225 @@
+:root {
+    --color-bg: #F7F3EB;
+    --color-primary: #00704A;
+    --color-primary-dark: #1E3932;
+    --color-surface: #FFFFFF;
+    --color-danger: #C94C4C;
+    --color-text: #1E1E1E;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    background-color: var(--color-primary-dark);
+    padding: 20px 0;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #FFFFFF !important;
+}
+.btn-add-cafe {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.btn-add-cafe:hover {
+    filter: brightness(1.15);
+    color: #FFFFFF !important;
+    background-color: var(--color-primary) !important;
+}
+
+.hero {
+    background-color: var(--color-primary);
+    padding: 60px 0;
+    color: #FFFFFF
+}
+
+.hero h1 {
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.hero-small {
+    padding: 40px 0;
+}
+
+.form-card {
+    padding: 16px;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-text a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-text a:hover {
+    text-decoration: underline;
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-img-wrapper {
+    position: relative;
+}
+
+.card-img-overlay-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+}
+
+.card-img-overlay-title .card-title {
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.delete-form {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.delete-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--color-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.delete-icon-btn:hover {
+    background-color: var(--color-danger);
+    color: #FFFFFF;
+}
+
+.price-tag {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.btn {
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.btn-danger{
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.location-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.seats-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.badge {
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+}
+
+.badge.bg-success {
+    background-color: rgba(0, 112, 74, 0.12) !important;
+    color: var(--color-primary) !important;
+}
+.badge.bg-danger {
+    background-color: rgba(201, 76, 76, 0.12) !important;
+    color: var(--color-danger) !important;
+}
+
+.footer {
+    background-color: var(--color-primary-dark);
+    color: #FFFFFF;
+    padding: 24px 0;
+    margin-top: 40px;
+    opacity: 0.9;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #E0DACE;
+    padding: 10px 14px;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 112, 74, 0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+    bax-shadow: 0 0 0 0.2rem rgba(0, 112, 74, 0.15);
+    border-color: var(--color-primary);
+}

@@ -13,4 +13,4 @@ class CafeForm(FlaskForm):
     can_take_calls = BooleanField('Take Calls')
     seats = StringField('Seats')
     coffee_price = StringField('Coffee Price')
-    submit = SubmitField('Add Cafe')
+    submit = SubmitField('Add Café')
