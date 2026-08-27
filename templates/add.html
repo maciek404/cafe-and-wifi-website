@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }}
+    {{ form.name() }}
+    {{ form.map_url.label }}
+    {{ form.map_url() }}
+    {{ form.img_url.label }}
+    {{ form.img_url() }}
+    {{ form.location.label }}
+    {{ form.location() }}
+    {{ form.has_sockets.label }}
+    {{ form.has_sockets() }}
+    {{ form.has_toilet.label }}
+    {{ form.has_toilet() }}
+    {{ form.has_wifi.label }}
+    {{ form.has_wifi() }}
+    {{ form.can_take_calls.label }}
+    {{ form.can_take_calls() }}
+    {{ form.seats.label }}
+    {{ form.seats() }}
+    {{ form.coffee_price.label }}
+    {{ form.coffee_price() }}
+    {{ form.submit() }}
+  </form>
+</body>
+</html>

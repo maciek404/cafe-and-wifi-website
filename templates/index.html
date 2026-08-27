@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<div class="row">
+    {% for cafe in cafes %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ cafe.img_url }}" alt="picture of the local">
+                <div class="card-body">
+                    <h5 class="card-title">{{ cafe.name }}</h5>
+                    <p class="card-text">{{ cafe.location }}</p>
+                    <p class="card-text"><a href="{{ cafe.map_url }}">MAP LINK</a></p>
+                    <p class="card-text">Seats: {{ cafe.seats }}</p>
+                    <p class="card-text">Coffee price: {{ cafe.coffee_price }}</p>
+                    {% if cafe.has_wifi %}
+                        <p class="card-text">WIFI: ✅</p>
+                    {% else %}
+                        <p class="card-text">WIFI: ❌</p>
+                    {% endif %}
+                    {% if cafe.has_sockets %}
+                        <p class="card-text">SOCKETS: ✅</p>
+                    {% else %}
+                        <p class="card-text">SOCKETS: ❌</p>
+                    {% endif %}
+                    {% if cafe.has_toilet %}
+                        <p class="card-text">TOILET: ✅</p>
+                    {% else %}
+                        <p class="card-text">TOILET: ❌</p>
+                    {% endif %}
+                    {% if cafe.can_take_calls %}
+                        <p class="card-text">CALLS: ✅</p>
+                    {% else %}
+                        <p class="card-text">CALLS: ❌</p>
+                    {% endif %}
+                    <form method="POST" action="{{ url_for('delete_cafe', cafe_id=cafe.id) }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
