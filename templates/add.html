@@ -9,26 +9,76 @@
 <body>
   <form method="POST">
     {{ form.hidden_tag() }}
-    {{ form.name.label }}
-    {{ form.name() }}
-    {{ form.map_url.label }}
-    {{ form.map_url() }}
-    {{ form.img_url.label }}
-    {{ form.img_url() }}
-    {{ form.location.label }}
-    {{ form.location() }}
-    {{ form.has_sockets.label }}
-    {{ form.has_sockets() }}
-    {{ form.has_toilet.label }}
-    {{ form.has_toilet() }}
-    {{ form.has_wifi.label }}
-    {{ form.has_wifi() }}
-    {{ form.can_take_calls.label }}
-    {{ form.can_take_calls() }}
-    {{ form.seats.label }}
-    {{ form.seats() }}
-    {{ form.coffee_price.label }}
-    {{ form.coffee_price() }}
+    <div class="mb-3">
+      {{ form.name.label(class_="form-label") }}
+      {{ form.name(class_="form-control") }}
+      {% if form.name.errors %}
+        <div class="text-danger">
+          {% for error in form.name.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="mb-3">
+      {{ form.map_url.label(class_="form-label") }}
+      {{ form.map_url(class_="form-control") }}
+      {% if form.map_url.errors %}
+        <div class="text-danger">
+          {% for error in form.map_url.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="mb-3">
+      {{ form.img_url.label(class_="form-label") }}
+      {{ form.img_url(class_="form-control") }}
+      {% if form.img_url.errors %}
+        <div class="text-danger">
+          {% for error in form.img_url.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="mb-3">
+      {{ form.location.label(class_="form-label") }}
+      {{ form.location(class_="form-control") }}
+      {% if form.location.errors %}
+        <div class="text-danger">
+          {% for error in form.location.errors %}
+            <small>{{ error }}</small>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+      {{ form.has_sockets(class_="form-check-input") }}
+      {{ form.has_sockets.label(class_="form-check-label") }}
+      </div>
+      <div class="form-check">
+        {{ form.has_toilet(class_="form-check-input") }}
+        {{ form.has_toilet.label(class_="form-check-label") }}
+      </div>
+      <div class="form-check">
+        {{ form.has_wifi(class_="form-check-input") }}
+        {{ form.has_wifi.label(class_="form-check-label") }}
+      </div>
+      <div class="form-check">
+        {{ form.can_take_calls(class_="form-check-input") }}
+        {{ form.can_take_calls.label(class_="form-check-label") }}
+      </div>
+    </div>
+    <div class="mb-3">
+      {{ form.seats.label(class_="form-label") }}
+      {{ form.seats(class_="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.coffee_price.label(class_="form-label") }}
+      {{ form.coffee_price(class_="form-control") }}
+    </div>
     {{ form.submit() }}
   </form>
 </body>

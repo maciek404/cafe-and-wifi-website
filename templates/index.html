@@ -10,7 +10,7 @@
 <div class="row">
     {% for cafe in cafes %}
         <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card h-100">
                 <img class="card-img-top" src="{{ cafe.img_url }}" alt="picture of the local">
                 <div class="card-body">
                     <h5 class="card-title">{{ cafe.name }}</h5>
@@ -18,29 +18,19 @@
                     <p class="card-text"><a href="{{ cafe.map_url }}">MAP LINK</a></p>
                     <p class="card-text">Seats: {{ cafe.seats }}</p>
                     <p class="card-text">Coffee price: {{ cafe.coffee_price }}</p>
-                    {% if cafe.has_wifi %}
-                        <p class="card-text">WIFI: ✅</p>
-                    {% else %}
-                        <p class="card-text">WIFI: ❌</p>
-                    {% endif %}
-                    {% if cafe.has_sockets %}
-                        <p class="card-text">SOCKETS: ✅</p>
-                    {% else %}
-                        <p class="card-text">SOCKETS: ❌</p>
-                    {% endif %}
-                    {% if cafe.has_toilet %}
-                        <p class="card-text">TOILET: ✅</p>
-                    {% else %}
-                        <p class="card-text">TOILET: ❌</p>
-                    {% endif %}
-                    {% if cafe.can_take_calls %}
-                        <p class="card-text">CALLS: ✅</p>
-                    {% else %}
-                        <p class="card-text">CALLS: ❌</p>
-                    {% endif %}
+                    <div class="mb-2">
+                        {% if cafe.has_wifi %}
+                            <span class="badge bg-success me-1">WIFI</span>
+                        {% else %}
+                            <span class="badge bg-danger me-1">WIFI</span>
+                        {% endif %}
+                        <span class="badge {{ 'bg-success' if cafe.has_sockets else 'bg-danger' }} me-1">SOCKETS</span>
+                        <span class="badge {{ 'bg-success' if cafe.has_toilet else 'bg-danger' }} me-1">TOILET</span>
+                        <span class="badge {{ 'bg-success' if cafe.can_take_calls else 'bg-danger' }} me-1">TAKE CALLS</span>
+                    </div>
                     <form method="POST" action="{{ url_for('delete_cafe', cafe_id=cafe.id) }}">
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                        <button type="submit">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
                 </div>
             </div>
