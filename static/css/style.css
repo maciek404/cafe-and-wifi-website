@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: var(--color-bg);
+    background-color: var(--color-surface);
     font-family: 'Lato', sans-serif;
     color: var(--color-text);
 }
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar {
     background-color: var(--color-primary-dark);
-    padding: 20px 0;
+    padding: 25px 0;
 }
 
 .navbar-brand {
@@ -34,7 +34,21 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-size: 1.5rem;
     color: #FFFFFF !important;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
 }
+
+.logo-img {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-35%);
+    height: 120px;
+    width: auto;
+    z-index: 10;
+}
+
 .btn-add-cafe {
     background-color: var(--color-primary);
     color: #FFFFFF;
@@ -48,23 +62,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero {
-    background-color: var(--color-primary);
-    padding: 60px 0;
+    background-image: linear-gradient(rgba(30, 57, 50, 0.75), rgba(30, 57, 50, 0.75)),
+    url('https://images.unsplash.com/photo-1626402679707-b248aa61e5ff?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 80px;
     color: #FFFFFF
 }
 
 .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.highlight-word {
+    font-family: 'WindSong', cursive;
+    font-size: 1.9em;
+    color: #d0ccc5;
+    display: inline-block;
+    margin-left: -15px;
+    margin-right: 4px;
+    margin-bottom: -60px;
 }
 
 .hero-small {
     padding: 40px 0;
+}
+
+.brand-story {
+    padding: 70px 0;
+    background-color: var(--color-bg);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+/*.brand-story h2 {*/
+/*    font-size: 2.5rem;*/
+/*    max-width: 700px;*/
+/*    margin: 0 auto 24px;*/
+/*}*/
+
+.brand-story-text {
+    font-size: 1.1rem;
+    color: #5A5A5A;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
 .form-card {
